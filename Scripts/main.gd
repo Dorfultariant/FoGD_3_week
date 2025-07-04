@@ -13,5 +13,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if get_node_or_null("Player"):
-		HP.text = str($Player.HEALTH)
+		HP.text = str($Player.Health)
 		SCORE.text = str($Player.Score)

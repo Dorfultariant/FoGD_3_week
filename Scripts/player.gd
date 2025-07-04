@@ -5,12 +5,16 @@ class_name Player
 const SPEED = 300.0
 var Score : int = 0
 
-@export var HEALTH : int = 3
+var Health : int = 3
 
 var start_pos = Vector2(400, 400)
 
 func _ready():
 	global_position = start_pos
+	Score = 0
+	Health = 3
+
+
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -24,8 +28,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func got_hit():
-	HEALTH -= 1
-	if HEALTH <= 0:
+	Health -= 1
+	if Health <= 0:
 		Score = 0
-		HEALTH = 3
+		Health = 3
 		global_position = start_pos
